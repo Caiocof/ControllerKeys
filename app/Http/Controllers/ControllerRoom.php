@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RoomKeys;
 use App\Models\RentKeys;
 use Illuminate\Http\Request;
+use function React\Promise\reduce;
 
 class ControllerRoom extends Controller
 {
@@ -38,7 +39,17 @@ class ControllerRoom extends Controller
      */
     public function store(Request $request)
     {
-        $this->roomKey($request);
+        $rentKeys = [
+            'room_id' => $request->room_id,
+            'requester' => $request->requester,
+        ];
+
+        RentKeys::create($rentKeys);
+
+        $room = RoomKeys::find($request->room_id);
+        $room->status = true;
+        $room->save();
+
 
         return redirect()->action([ControllerRoom::class, 'index']);
 
@@ -94,7 +105,11 @@ class ControllerRoom extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $room = RoomKeys::find($id);
+        $room->status = false;
+        $room->save();
+
+        return redirect()->action([ControllerRoom::class, 'index']);
     }
 
     /**
@@ -108,18 +123,5 @@ class ControllerRoom extends Controller
         //
     }
 
-    private function roomKey($req)
-    {
-        $rentKeys = [
-            'room_id' => $req->room_id,
-            'requester' => $req->requester,
-        ];
 
-        RentKeys::create($rentKeys);
-
-        $room = RoomKeys::find($req->room_id);
-        $room->status = ($room->status ? false : true);
-        $room->save();
-
-    }
 }

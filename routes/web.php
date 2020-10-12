@@ -27,7 +27,7 @@ Route::get('/entregar/{id}', [ControllerRoom::class, 'show']);
 Route::post('/entregar/store', [ControllerRoom::class, 'store']);
 
 Route::get('/receber/{id}', [ControllerRoom::class, 'edit']);
-Route::post('/receber/update', [ControllerRoom::class, 'update']);
+Route::put('/receber/update/{uri}', [ControllerRoom::class, 'update']);
 
 
 /**

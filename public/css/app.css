@@ -43,12 +43,25 @@
 }
 
 #btnKeys {
-    margin-left: 20px;
+    justify-content: center;
+    margin-left: 40px;
     padding: 10px 30px;
 }
 
+.formReceive {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.buttonReceive{
+    margin-left: 200px;
+    padding: 10px 20px;
+}
+
 footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
