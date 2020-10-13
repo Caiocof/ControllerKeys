@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\RoomKeys;
 use App\Models\RentKeys;
 use Illuminate\Http\Request;
-use function React\Promise\reduce;
 
 class ControllerRoom extends Controller
 {
@@ -82,11 +81,12 @@ class ControllerRoom extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($room_id)
     {
-        $rentRoom = RentKeys::where('id', $id)->get();
+        $rentRoom = RentKeys::where('room_id', $room_id)->where('requester', '!=', 'null')->get();
 
         if (!empty($rentRoom)) {
+
             $rentRoom = $rentRoom[0];
 
             return view('room.receive')->with('rentRoom', $rentRoom);
@@ -103,9 +103,15 @@ class ControllerRoom extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $room_id)
     {
-        $room = RoomKeys::find($id);
+
+        $rent = RentKeys::find($request->id);
+        $rent->receiveKey = $request->requester;
+        $rent->requester = null;
+        $rent->save();
+
+        $room = RoomKeys::find($room_id);
         $room->status = false;
         $room->save();
 

@@ -26,8 +26,8 @@ Route::get('/chaves', [ControllerRoom::class, 'index']);
 Route::get('/entregar/{id}', [ControllerRoom::class, 'show']);
 Route::post('/entregar/store', [ControllerRoom::class, 'store']);
 
-Route::get('/receber/{id}', [ControllerRoom::class, 'edit']);
-Route::put('/receber/update/{uri}', [ControllerRoom::class, 'update']);
+Route::get('/receber/{room_id}', [ControllerRoom::class, 'edit']);
+Route::put('/receber/update/{room_id}', [ControllerRoom::class, 'update']);
 
 
 /**

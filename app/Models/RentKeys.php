@@ -11,5 +11,19 @@ class RentKeys extends Model
 
     protected $table = 'rent_keys';
 
-    protected $fillable = ['room_id', 'requester'];
+    protected $fillable = ['room_id', 'requester', 'receiveKey'];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
