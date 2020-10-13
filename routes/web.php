@@ -14,14 +14,10 @@ use \App\Http\Controllers\ControllerRoom;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /**
  * ROTAS CHAVE DAS SALAS
  */
-Route::get('/chaves', [ControllerRoom::class, 'index']);
+Route::get('/', [ControllerRoom::class, 'index']);
 
 Route::get('/entregar/{id}', [ControllerRoom::class, 'show']);
 Route::post('/entregar/store', [ControllerRoom::class, 'store']);

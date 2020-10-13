@@ -19,7 +19,7 @@
         </div>
         <div class="form-group  col-md-6">
             <button type="submit" class="btn btn-success">Salvar</button>
-            <a href="{{url('/chaves')}}" class="btn btn-primary" role="button">Voltar</a>
+            <a href="{{url('/')}}" class="btn btn-primary" role="button">Voltar</a>
         </div>
 
     </form>

@@ -14,7 +14,7 @@
             </div>
             <div class="form-group  col-md-6 buttonReceive">
                 <button type="submit" class="btn btn-success">Sim</button>
-                <a href="{{url('/chaves')}}" class="btn btn-primary" role="button">Não</a>
+                <a href="{{url('/')}}" class="btn btn-primary" role="button">Não</a>
             </div>
         </div>
     </form>
