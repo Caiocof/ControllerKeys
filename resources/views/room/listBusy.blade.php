@@ -18,16 +18,18 @@
             <tbody >";
 
         foreach ($listKeys as $listKey) {
-
-            echo "
-            <tr  class='table-light'>
-                <th scope='row'>$listKey->id</th >
-                <td > $listKey->name</td >
-                <td > $listKey->requester</td >
-                <td >" . date_format($listKey->updated_at, 'd-m / H:i') . "</td >
-            </tr >
+            if ($listKey->requester != null) {
+                echo "
+                    <tr  class='table-light'>
+                        <th scope='row'>$listKey->id</th >
+                        <td > $listKey->name</td >
+                        <td > $listKey->requester</td >
+                        <td >" . date_format($listKey->updated_at, 'd-m / H:i') . "</td >
+                    </tr >
             ";
+            }
         }
+
         echo "
             </tbody >
         </table >
