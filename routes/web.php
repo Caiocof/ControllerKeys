@@ -25,6 +25,8 @@ Route::post('/entregar/store', [ControllerRoom::class, 'store']);
 Route::get('/receber/{room_id}', [ControllerRoom::class, 'edit']);
 Route::put('/receber/update/{room_id}', [ControllerRoom::class, 'update']);
 
+Route::get('/listaOcupadas', [ControllerRoom::class, 'busy']);
+
 
 /**
  * ROTAS DE ERRO

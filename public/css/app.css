@@ -42,9 +42,13 @@
     font-size: 15pt;
 }
 
+.titlePages {
+    text-align: center;
+    font-family: "Arial Black";
+}
+
 #btnKeys {
-    justify-content: center;
-    margin-left: 40px;
+    margin: 20px 30px;
     padding: 10px 30px;
 }
 

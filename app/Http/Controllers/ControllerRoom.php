@@ -21,16 +21,6 @@ class ControllerRoom extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -118,16 +108,15 @@ class ControllerRoom extends Controller
         return redirect()->action([ControllerRoom::class, 'index']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function busy()
     {
-        //
-    }
+        $listKeys = RoomKeys::where('status', '=', true)
+            ->join('rent_keys', 'room_keys.id', 'rent_keys.room_id')
+            ->get();
 
+        return view('room.listBusy')->with('listKeys', $listKeys);
+
+
+    }
 
 }

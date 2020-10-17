@@ -16,20 +16,20 @@
     <img src="{{asset('/image/top.png')}}" alt="Imagem do topo" class="imgTopo">
 </div>
 <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
-    <a class="navbar-brand" href="{{url('/chaves')}}"><img src="{{asset('/image/logo.png')}}" alt="Logo"
-                                                           class="imgLogo"></a>
+    <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('/image/logo.png')}}" alt="Logo"
+                                                     class="imgLogo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto" >
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active menu">
-                <a class="nav-link" href="{{url('/chaves')}}">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{url('/')}}">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item menu">
-                <a class="nav-link" href="#">Chaves das Salas</a>
+                <a class="nav-link" href="{{url('/listaOcupadas')}}">Chaves em uso</a>
             </li>
             <li class="nav-item menu">
                 <a class="nav-link" href="#">Chaves Miltimidia</a>

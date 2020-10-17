@@ -19,10 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e787fd76-1821-401c-971f-a14b369b5cab" name="Default Changelist" comment="controller setting in method updade">
+    <list default="true" id="e787fd76-1821-401c-971f-a14b369b5cab" name="Default Changelist" comment="index">
+      <change afterPath="$PROJECT_DIR$/resources/views/room/listBusy.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/deliver.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/deliver.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/room/receive.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/receive.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ControllerRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ControllerRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/room/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/room/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/room/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +164,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/room" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -173,13 +176,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\system\xampp\htdocs\WORKES\ProjLara\ControllerKeys\resources\views\room" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\system\xampp\htdocs\WORKES\ProjLara\ControllerKeys\resources\views\room" />
       <recent name="E:\system\xampp\htdocs\WORKES\ProjLara\ControllerKeys\public\image" />
       <recent name="E:\system\xampp\htdocs\WORKES\ProjLara\ControllerKeys\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\system\xampp\htdocs\WORKES\ProjLara\ControllerKeys\resources\views\room" />
     </key>
   </component>
   <component name="RunManager">
@@ -205,7 +208,8 @@
       <workItem from="1602582211951" duration="2347000" />
       <workItem from="1602604027868" duration="1855000" />
       <workItem from="1602616237032" duration="248000" />
-      <workItem from="1602617094313" duration="73000" />
+      <workItem from="1602617094313" duration="96000" />
+      <workItem from="1602887656620" duration="6132000" />
     </task>
     <task id="LOCAL-00001" summary="creation of a new control project for concierge">
       <created>1602543442537</created>
@@ -235,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602616472360</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="index">
+      <created>1602617179216</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602617179216</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,7 +269,8 @@
     <MESSAGE value="receive key" />
     <MESSAGE value="controller setting in method updade" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="index" />
+    <option name="LAST_COMMIT_MESSAGE" value="index" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602512077790">
@@ -281,18 +293,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602534071273" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1602541052453">
+    <state x="277" y="57" key="SettingsEditor" timestamp="1602893713170">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602541052453" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602616475950">
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602893713170" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602617181452">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602616475950" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602615386744">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602617181452" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602893837523">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602615386744" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1366.303.1366.728@0.0.1536.824" timestamp="1602893837523" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602545636182">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
