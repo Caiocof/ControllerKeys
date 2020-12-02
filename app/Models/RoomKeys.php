@@ -11,6 +11,5 @@ class RoomKeys extends Model
 
     protected $table = 'room_keys';
 
-    protected $fillable = ['name', 'status'];
 
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\RoomKeys;
 use App\Models\RentKeys;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ControllerRoom extends Controller
 {
@@ -15,6 +16,10 @@ class ControllerRoom extends Controller
      */
     public function index()
     {
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
+
         $rooms = RoomKeys::all();
 
         return view('room.index')->with('rooms', $rooms);
@@ -28,19 +33,34 @@ class ControllerRoom extends Controller
      */
     public function store(Request $request)
     {
-        $rentKeys = [
-            'room_id' => $request->room_id,
-            'requester' => $request->requester,
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
+
+        $requireds = [
+            'requester' => 'required'
         ];
 
-        RentKeys::create($rentKeys);
+        $message = [
+            'requester.required' => 'O nome do solicitante é um campo obrigatorio!'
+        ];
+
+        $request->validate($requireds, $message);
+
+        $rentKeys = new RentKeys();
+        $rentKeys->receiveKey = $request->room_id;
+        $rentKeys->requester = $request->requester;
+        $rentKeys->user_id = Auth::user()->id;
+        $rentKeys->save();
 
         $room = RoomKeys::find($request->room_id);
         $room->status = true;
+
+
         $room->save();
 
 
-        return redirect()->action([ControllerRoom::class, 'index']);
+        return redirect()->route('index.room');
 
     }
 
@@ -52,6 +72,10 @@ class ControllerRoom extends Controller
      */
     public function show($id)
     {
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
+
         $room = RoomKeys::where('id', $id)->get();
 
         if (!empty($room)) {
@@ -61,7 +85,7 @@ class ControllerRoom extends Controller
             return view('room.deliver')->with('room', $room);
 
         } else {
-            return redirect()->action([ControllerRoom::class, 'index']);
+            return redirect()->route('index.room');
         }
     }
 
@@ -73,7 +97,11 @@ class ControllerRoom extends Controller
      */
     public function edit($room_id)
     {
-        $rentRoom = RentKeys::where('room_id', $room_id)->where('requester', '!=', 'null')->get();
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
+
+        $rentRoom = RentKeys::where('receiveKey', $room_id)->where('requester', '!=', 'null')->get();
 
         if (!empty($rentRoom)) {
 
@@ -82,7 +110,7 @@ class ControllerRoom extends Controller
             return view('room.receive')->with('rentRoom', $rentRoom);
 
         } else {
-            return redirect()->action([ControllerRoom::class, 'index']);
+            return redirect()->route('index.room');
         }
     }
 
@@ -95,9 +123,12 @@ class ControllerRoom extends Controller
      */
     public function update(Request $request, $room_id)
     {
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
 
         $rent = RentKeys::find($request->id);
-        $rent->receiveKey = $request->requester;
+        $rent->devolution = $request->requester;
         $rent->requester = null;
         $rent->save();
 
@@ -105,14 +136,20 @@ class ControllerRoom extends Controller
         $room->status = false;
         $room->save();
 
-        return redirect()->action([ControllerRoom::class, 'index']);
+        return redirect()->route('index.room');
     }
 
     public function busy()
     {
-        $listKeys = RoomKeys::where('status', '=', true)
-            ->join('rent_keys', 'room_keys.id', 'rent_keys.room_id')
+        if (!Auth::check() === true) {
+            return redirect()->route('login');
+        }
+
+        $listKeys = RoomKeys::where('requester', '!=', null)
+            ->join('rent_keys', 'room_keys.id', 'rent_keys.receiveKey')
+            ->orderBy('requester')
             ->get();
+
 
         return view('room.listBusy')->with('listKeys', $listKeys);
 

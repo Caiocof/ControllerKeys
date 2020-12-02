@@ -10,8 +10,7 @@ class RentKeys extends Model
     use HasFactory;
 
     protected $table = 'rent_keys';
-
-    protected $fillable = ['room_id', 'requester', 'receiveKey'];
+    protected $fillable = ['id', 'requester', 'receiveKey','requesterLast'];
 }
 
 

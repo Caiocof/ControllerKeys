@@ -48,13 +48,29 @@
 }
 
 #btnKeys {
-    margin: 20px 30px;
-    padding: 10px 30px;
+    margin: 20px 20px;
+    padding: 10px 25px;
+}
+
+.div-btn-receive {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.btn-receive{
+font-size: 15pt;
+text-align: center;
+font-weight: bold;
+margin-top: 20px;
+padding-left: 20px;
+padding-right: 20px;
 }
 
 
 footer {
-    position: absolute;
-    bottom: 0;
+    margin-bottom: 0px;
+    text-align: center;
     width: 100%;
 }

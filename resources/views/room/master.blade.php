@@ -16,7 +16,7 @@
     <img src="{{asset('/image/top.png')}}" alt="Imagem do topo" class="imgTopo">
 </div>
 <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
-    <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('/image/logo.png')}}" alt="Logo"
+    <a class="navbar-brand" href="{{route('index.room')}}"><img src="{{asset('/image/logo.png')}}" alt="Logo"
                                                      class="imgLogo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,33 +26,34 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active menu">
-                <a class="nav-link" href="{{url('/')}}">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('index.room')}}">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item menu">
-                <a class="nav-link" href="{{url('/listaOcupadas')}}">Chaves em uso</a>
+                <a class="nav-link" href="{{route('busy.room')}}">Chaves em uso</a>
             </li>
             <li class="nav-item menu">
-                <a class="nav-link" href="#">Chaves Miltimidia</a>
+                <a class="nav-link" href="#">Chaves Multimídia</a>
+            </li>
+            <li class="nav-item menu">
+                <a class="nav-link" href="{{route('logout')}}">SAIR</a>
             </li>
 
         </ul>
     </div>
 </nav>
-<div class="container my-5">
+<div class="container">
     @yield('content')
 </div>
 
 
 <footer>
-    <div class="card text-white bg-primary mb-3" style="max-width: 100%">
-        <div class="card-header" style="text-align: center">
+    <div class="card text-white bg-primary mt-3">
+        <div class="card-header">
             © 2020 - {{date('Y')}}<br/>
-            Caiocof todos os direitos reservado<br/>
-            Orgulhosamente desenvolvido com Laravel®
+            Caiocof todos os direitos reservado®
         </div>
     </div>
 </footer>
-
 
 </body>
 </html>

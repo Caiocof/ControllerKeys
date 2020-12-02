@@ -110,6 +110,16 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/lucascudo/laravel-pt-br-localization" />
+      <path value="$PROJECT_DIR$/vendor/vendor/jquery" />
+      <path value="$PROJECT_DIR$/vendor/vendor/animate" />
+      <path value="$PROJECT_DIR$/vendor/vendor/select2" />
+      <path value="$PROJECT_DIR$/vendor/vendor/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/vendor/animsition" />
+      <path value="$PROJECT_DIR$/vendor/vendor/countdowntime" />
+      <path value="$PROJECT_DIR$/vendor/vendor/css-hamburgers" />
+      <path value="$PROJECT_DIR$/vendor/vendor/daterangepicker" />
+      <path value="$PROJECT_DIR$/vendor/vendor/perfect-scrollbar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
