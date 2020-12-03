@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\ControllerRoom;
 use \App\Http\Controllers\ControllerLogin;
 use \App\Http\Controllers\ControllerUser;
+use \App\Http\Controllers\ControlerLaboratory;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,16 @@ Route::put('/receber/update/{room_id}', [ControllerRoom::class, 'update'])->name
 
 Route::get('/listaOcupadas', [ControllerRoom::class, 'busy'])->name('busy.room');
 
+
+/**
+ * ROTAS CHAVE DAS LABORATÓRIO
+ */
+Route::get('/listaLab', [ControlerLaboratory::class, 'index'])->name('index.laboratory');
+Route::get('/entregarLab/{id}', [ControlerLaboratory::class, 'show'])->name('show.laboratory');
+Route::post('/entregarLab/store', [ControlerLaboratory::class, 'store'])->name('store.laboratory');
+
+Route::get('/receberLab/{room_id}', [ControlerLaboratory::class, 'edit'])->name('edit.laboratory');
+Route::put('/receberLab/update/{room_id}', [ControlerLaboratory::class, 'update'])->name('update.laboratory');
 
 /**
  * ROTAS DE ERRO

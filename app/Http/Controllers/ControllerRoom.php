@@ -20,7 +20,7 @@ class ControllerRoom extends Controller
             return redirect()->route('login');
         }
 
-        $rooms = RoomKeys::all();
+        $rooms = RoomKeys::where('name', 'like', 'SALA%')->get();
 
         return view('room.index')->with('rooms', $rooms);
     }

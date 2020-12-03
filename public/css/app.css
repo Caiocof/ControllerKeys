@@ -52,6 +52,12 @@
     padding: 10px 25px;
 }
 
+#btnKeysLab {
+    margin: 10px 10px;
+    width: 30%;
+    padding: 10px 25px;
+}
+
 .div-btn-receive {
 display: flex;
 flex-direction: row;
@@ -73,4 +79,11 @@ footer {
     margin-bottom: 0px;
     text-align: center;
     width: 100%;
+}
+
+footer  a{
+    color: white;
+}
+footer a:hover{
+    color: white;
 }

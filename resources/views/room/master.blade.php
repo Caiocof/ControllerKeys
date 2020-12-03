@@ -26,13 +26,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active menu">
-                <a class="nav-link" href="{{route('index.room')}}">Inicio <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('index.room')}}">Salas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item menu">
+                <a class="nav-link" href="{{route('index.laboratory')}}">Laboratórios</a>
             </li>
             <li class="nav-item menu">
                 <a class="nav-link" href="{{route('busy.room')}}">Chaves em uso</a>
-            </li>
-            <li class="nav-item menu">
-                <a class="nav-link" href="#">Chaves Multimídia</a>
             </li>
             <li class="nav-item menu">
                 <a class="nav-link" href="{{route('logout')}}">SAIR</a>
@@ -50,7 +50,7 @@
     <div class="card text-white bg-primary mt-3">
         <div class="card-header">
             © 2020 - {{date('Y')}}<br/>
-            Caiocof todos os direitos reservado®
+            <a href="mailto:caiooliveira3652@outlook.com?subject=sistema Pitágoras">Caiocof</a> todos os direitos reservado®
         </div>
     </div>
 </footer>
